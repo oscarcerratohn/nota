@@ -1,0 +1,29 @@
+<h1>Listing nota</h1>
+
+<table>
+  <tr>
+    <th>Asignatura</th>
+    <th>Catedratico</th>
+    <th>Nota</th>
+    <th>Observaciones</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @nota.each do |notum| %>
+  <tr>
+    <td><%= notum.Asignatura %></td>
+    <td><%= notum.Catedratico %></td>
+    <td><%= notum.Nota %></td>
+    <td><%= notum.Observaciones %></td>
+    <td><%= link_to 'Show', notum %></td>
+    <td><%= link_to 'Edit', edit_notum_path(notum) %></td>
+    <td><%= link_to 'Destroy', notum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Notum', new_notum_path %>
